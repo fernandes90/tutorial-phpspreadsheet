@@ -1,0 +1,17 @@
+/* 
+    Created on : 01/12/2022, 20:09:28
+    Author     : Magno
+*/
+html,body{
+    background-color:#fafafa;
+}
+#mainContainer{
+    background-color: #fff;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+.alert{
+    text-align: center;
+}
+

@@ -1,0 +1,26 @@
+#Protegendo o arquivo contra acesso externo
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+#Habilitando mod rewrite
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+#Retira index.php da url
+RewriteCond %{THE_REQUEST} ^.*/index.php
+RewriteRule ^(.*)$ / [R=301,L]
+
+#Reescreve as urls externas
+RewriteRule ^([^/]*)\.html$ /importExcel/index.php?exe=$1 [L]
+
+#Desabilitando a listagem de diretorios
+Options -Indexes
+
